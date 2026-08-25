@@ -13,6 +13,7 @@ html, body {
 
     /* Background Color */
     --bg-primary-color: #0c0c0c;
+    --bg-fill-color: #fdfdfc;
 
     /* Text Color */
     --text-primary-color: #f0f0f0;
@@ -72,10 +73,18 @@ section .infos {
 .board {
     border: 1px solid var(--border-primary-color);
     flex-grow: 1; /* Allow the board to grow and fill available space */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30px, 1fr)); /* Adjust the number of columns based on available space */
+    grid-template-rows: repeat(auto-fill, minmax(30px, 1fr)); /* Adjust the number of rows based on available space */
+
 }
 
 .block {
-    width: 20px;
-    height: 20px;
+    font-size: 7px; 
+    text-align: center;
     border: 1px solid var(--border-primary-color);
+}
+
+.fill {
+    background-color: var(--bg-fill-color);
 }
